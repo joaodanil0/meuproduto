@@ -1,0 +1,15 @@
+modalias_handling enabled
+subsystem usbmisc
+    devname uevent_devname
+
+/dev/mali0              0666 system graphics
+/dev/ion	            0666 system graphics
+/dev/graphics/fb0       0666 system graphics
+/dev/cec0	            0666 system graphics
+/dev/i2c-0	            0666 system system
+
+/dev/video1             0660 system camera
+/dev/video2             0660 system camera
+/dev/video3             0660 system camera
+
+
