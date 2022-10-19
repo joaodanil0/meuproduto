@@ -31,3 +31,9 @@ PRODUCT_MANUFACTURER    := Casa_Jao
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.$(HARDWARE_NAME) \
 # ================= END =================
+
+# ================= Init Files =================
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.placamae.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.rc \
+    $(LOCAL_PATH)/init/init.placamae.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.usb.rc
+# ================= END =================     

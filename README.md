@@ -1,6 +1,8 @@
 
 # Issues
 
+- Remover o fstab do ramdisk não faz a imagem do boot.img ser regerada. (foi preciso deletar a imagem do boot.img para gerar a alteração)
+
 ## Fastboot problem
 
 - https://android-review.googlesource.com/c/device/amlogic/yukawa/+/1855897
