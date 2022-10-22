@@ -1,6 +1,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
+PRODUCT_SOONG_NAMESPACES += device/casa/placamae
+
 # ================= Local Variables =================
 LOCAL_KERNEL            := device/casa/placamae/blackbox/Image.lz4
 LOCAL_DTB               := device/casa/placamae/blackbox/
