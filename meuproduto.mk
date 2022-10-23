@@ -7,6 +7,7 @@ PRODUCT_SOONG_NAMESPACES += device/casa/placamae
 LOCAL_KERNEL            := device/casa/placamae/blackbox/Image.lz4
 LOCAL_DTB               := device/casa/placamae/blackbox/dtb.img
 HARDWARE_NAME           := placamae#            Variable used at processador/BoardConfig.mk
+TARGET_BOARD_PLATFORM   := yukawa#
 # ================= END =================
 
 # ================= Copy Kernel | DTB =================
@@ -38,7 +39,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.placamae.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.rc \
     $(LOCAL_PATH)/init/init.placamae.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.usb.rc \
     $(LOCAL_PATH)/init/init.placamae.adb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.adb.rc \
-    $(LOCAL_PATH)/init/init.placamae.recovery.rc:recovery/root/init.recovery.${HARDWARE_NAME}.rc
+    $(LOCAL_PATH)/init/init.placamae.recovery.rc:recovery/root/init.recovery.${HARDWARE_NAME}.rc \
+    $(LOCAL_PATH)/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
 # ================= END =================
 
 # ================= Recovery =================
@@ -52,4 +54,32 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES +=  \
     libGLES_mali \
     libGLES_android
+# ================= END =================
+
+# ================= suitable EGLConfig =================
+
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=320
+
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    gralloc.yukawa
+
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.4-service.widevine \
+    android.hardware.drm@1.4-service.clearkey \
+    hwcomposer.drm_meson
+# ================= END =================
+
+# ================= Boot Animation =================
+PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+# Software Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service.software
 # ================= END =================
