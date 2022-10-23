@@ -9,6 +9,7 @@ LOCAL_DTB               := device/casa/placamae/blackbox/
 HARDWARE_NAME           := placamae#            Variable used at processador/BoardConfig.mk
 DTBO_IMAGE              = dtbo-unsigned.img#    Variable used at build/tasks/dtimages.mk
 DTB_IMAGE               = dtb.img#              Variable used at
+GPU_TYPE                := gondul_ion# 
 # ================= END =================
 
 # ================= Copy Kernel | DTBO =================
@@ -48,4 +49,10 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0 \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
+# ================= END =================
+
+# ================= OpenGL ES implementation =================
+PRODUCT_PACKAGES +=  \
+    libGLES_mali \
+    libGLES_android
 # ================= END =================
