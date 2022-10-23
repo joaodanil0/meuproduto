@@ -5,16 +5,13 @@ PRODUCT_SOONG_NAMESPACES += device/casa/placamae
 
 # ================= Local Variables =================
 LOCAL_KERNEL            := device/casa/placamae/blackbox/Image.lz4
-LOCAL_DTB               := device/casa/placamae/blackbox/
+LOCAL_DTB               := device/casa/placamae/blackbox/dtb.img
 HARDWARE_NAME           := placamae#            Variable used at processador/BoardConfig.mk
-DTBO_IMAGE              = dtbo-unsigned.img#    Variable used at build/tasks/dtimages.mk
-DTB_IMAGE               = dtb.img#              Variable used at
-GPU_TYPE                := gondul_ion# 
 # ================= END =================
 
-# ================= Copy Kernel | DTBO =================
+# ================= Copy Kernel | DTB =================
 PRODUCT_COPY_FILES  +=$(LOCAL_KERNEL):kernel
-PRODUCT_COPY_FILES  +=$(LOCAL_DTB)/$(DTB_IMAGE):dtb.img
+PRODUCT_COPY_FILES  +=$(LOCAL_DTB):dtb.img
 # ================= END =================
 
 # ================= Super Partition Options =================
