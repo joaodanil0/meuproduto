@@ -32,11 +32,20 @@ PRODUCT_MANUFACTURER    := Casa_Jao
 # ================= Fstab Files =================
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab/fstab.ramdisk.common:$(TARGET_COPY_OUT_RAMDISK)/fstab.$(HARDWARE_NAME) \
+    $(LOCAL_PATH)/fstab/fstab.placamae:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(HARDWARE_NAME)
 # ================= END =================
 
 # ================= Init Files =================
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.placamae.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.rc \
     $(LOCAL_PATH)/init/init.placamae.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.usb.rc \
-    $(LOCAL_PATH)/init/init.placamae.adb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.adb.rc
-# ================= END =================     
+    $(LOCAL_PATH)/init/init.placamae.adb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.${HARDWARE_NAME}.adb.rc \
+    $(LOCAL_PATH)/init/init.placamae.recovery.rc:recovery/root/init.recovery.${HARDWARE_NAME}.rc
+# ================= END =================
+
+# ================= Recovery =================
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0 \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+# ================= END =================
