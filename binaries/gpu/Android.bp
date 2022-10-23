@@ -3,7 +3,7 @@ cc_prebuilt_library_shared {
     name: "libGLES_mali",
     compile_multilib: "both",
     vendor: true,
-    relative_install_path: "egl"
+    relative_install_path: "egl",
 
 
     multilib: {
