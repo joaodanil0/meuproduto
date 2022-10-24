@@ -103,4 +103,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service
 # ================= END =================
 
-
+# ================= Disable Screen Off =================
+DEVICE_PACKAGE_OVERLAYS := device/casa/placamae/overlay
+# ================= END =================
