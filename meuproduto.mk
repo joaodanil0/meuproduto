@@ -111,3 +111,9 @@ DEVICE_PACKAGE_OVERLAYS := device/casa/placamae/overlay
 PRODUCT_COPY_FILES +=  \
     frameworks/native/data/etc/android.software.app_widgets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.app_widgets.xml 
 # ================= END =================
+
+# ================= UserLed =================
+PRODUCT_PACKAGES += \
+    placamae.hal.userled \
+    placamae.hal.userled-service
+# ================= END =================

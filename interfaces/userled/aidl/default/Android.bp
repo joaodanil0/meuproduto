@@ -1,0 +1,28 @@
+
+cc_binary {
+    name: "placamae.hal.userled-service",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["placamae.hal.userled-service.rc"],
+    vintf_fragments: ["placamae.hal.userled-service.xml"],
+
+    srcs: [
+        "Service.cpp",
+        "UserLed.cpp"
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libhardware",
+        "libbinder_ndk",
+        "libbinder",
+        "libutils",
+        "placamae.hal.userled-V1-ndk_platform",
+    ],
+}

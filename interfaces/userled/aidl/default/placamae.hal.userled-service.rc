@@ -1,0 +1,10 @@
+
+service placamae.hal.userled-service /vendor/bin/hw/placamae.hal.userled-service
+    interface aidl placamae.hal.userled-service.IUserLed/default
+    class hal
+    user system
+    group system
+
+on boot
+    chown system system /sys/devices/platform/leds/leds/vim3:red/trigger
+    chmod 0660 /sys/devices/platform/leds/leds/vim3:red/trigger
