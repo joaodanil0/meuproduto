@@ -67,3 +67,7 @@ DEVICE_MANIFEST_FILE	+= device/casa/placamae/xml/manifest.xml
 TARGET_RECOVERY_PIXEL_FORMAT	:= RGBX_8888
 TARGET_RECOVERY_FSTAB			:= device/casa/placamae/fstab/fstab.recovery.placamae
 # ================= END =================
+
+# ================= Sepolicy =================
+BOARD_SEPOLICY_DIRS += device/casa/placamae/sepolicy
+# ================= END =================
