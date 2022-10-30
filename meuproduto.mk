@@ -117,3 +117,6 @@ PRODUCT_PACKAGES += \
     placamae.hal.userled \
     placamae.hal.userled-service
 # ================= END =================
+
+PRODUCT_PACKAGES += \
+    UserLedApp
